@@ -19,21 +19,29 @@ All data in these repositories is synthetic. Each repo generates its data with a
 ## TL;DR findings (simulated scenarios)
 
 **1. Member retention cohorts**
-<!-- P1_TLDR -->
+- A first PCP visit within 90 days is linked to a 0.53x disenrollment hazard (Cox, adjusted for dual status, channel, plan type, age; 95% CI 0.49-0.58). Among members still enrolled at day 90, 12-month retention is 93.0% with a visit vs 86.7% without, and 88.3% vs 80.2% for dual-eligible members.
+- Disenrollment runs 2.12x higher in January-March (2.60% vs 1.23% per month). Month-end snapshots miss 2.0% of terminations because some are posted 30-60 days late.
+- Recommendation: do not fund a 5-FTE outreach team on this evidence alone. One year of outreach breaks even on 24-month revenue only if at least 20% of the association is causal, so start with a randomized pilot on dual-eligible members.
 
 **2. Appointment-reminder A/B test**
-<!-- P2_TLDR -->
+- No-shows fell 2.62 pp (13.8% to 11.1%, 95% CI -3.18 to -2.05 pp), CUPED-adjusted with patient-clustered errors. Late cancels rose 1.46 pp, but unfilled slots fell 4.20 pp (18.5% to 14.2%) because the refill rate of late-cancelled slots went from 24% to 59%.
+- The overall sample-ratio test passed (p = 0.55) but missed a broken cell: a clinic-by-week scan found clinic C17 logged 0 treatment vs. 82 control assignments from 2025-04-07 to 2025-04-15. Those patients were excluded from both arms.
+- Decision under the pre-registered rule: roll out network-wide. Estimated net value is $1,002K per year (95% CI $848K to $1,157K) versus $473K for a Medicaid + self-pay-only rollout.
 
 **3. Claims payment integrity**
-<!-- P3_TLDR -->
+- Review 18 providers, not 25. Only 18 carry a flagged billing scheme with expected recovery above the $2,400 cost of a review. Their estimated overpayment is $1.93M; at a 65% recovery rate that is $1.25M, or $1,742 per review hour.
+- Case-mix adjustment removes the false alarms. A raw peer comparison flags 12 providers for top-level E/M billing, including all 4 complex-care decoys; after adjustment it flags 8 providers, all planted upcoders, and 0 decoys.
+- Netting replacements and voids cuts "duplicate" lines from 18,859 to 1,929.
 
 **4. Contact-center forecast and staffing**
-<!-- P4_TLDR -->
+- The forecast beats a seasonal-naive baseline by 56%: WAPE 3.4% vs. 7.7% (MASE 0.52 vs. 1.18) over 8 rolling origins with 13-week horizons. The 80% prediction intervals covered 80% of actual days.
+- Q1 2026 needs 50.3 FTE on average against a roster of 48, short in 12 of 12 full weeks. Recommendation: hire 4 agents now (productive from 2026-02-12) and cover the gap with overtime.
+- The Feb 2 price notice adds about 530 calls over 10 days and pushes the requirement to 54.0 FTE in the week of 2026-02-02. The Q1 overtime budget is $16,811, of which $4,028 is for the notice.
 
 **5. SaaS revenue metric layer and data quality**
-- Governed 2025 NRR is 104.0% (bootstrap 95% CI 102.0–105.8%), with GRR 89.0% and logo churn 11.5%. Sales reports 112.3%, Finance 101.2%, and Product 98.6%. Step-by-step bridges explain every gap with no residual; for example, one-time setup fees booked as ARR add 3.1 pp to the Sales number.
+- Governed 2025 NRR is 104.0% (bootstrap 95% CI 102.0–105.9%), with GRR 89.0% and logo churn 11.5%. Sales reports 112.3%, Finance 101.2%, and Product 98.6%. Step-by-step bridges explain every gap with no residual; for example, one-time setup fees booked as ARR add 3.1 pp to the Sales number.
 - Without the April +7% Mid-tier price increase, NRR would be 100.6%, so about 86% of net retention above 100% comes from one price action.
-- Segment NRR runs from Enterprise 118.0% to SMB 91.0%, a 27.0 pp gap (95% CI 22.2–31.7 pp).
+- Segment NRR runs from Enterprise 118.0% to SMB 91.0%, a 27.0 pp gap (95% CI 22.2–31.5 pp).
 - A daily data-quality monitor flagged both planted incidents (a duplicated invoice export and a frozen FX feed) on the first day. The volume check had one false-positive day in 30 months.
 
 ## Skills-to-project matrix
